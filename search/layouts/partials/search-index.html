@@ -1,5 +1,5 @@
 {{- $allSections := slice -}}
-{{- range site.Home.Sections -}}
+{{- range site.Pages -}}
   {{- $allSections = $allSections | append .Section -}}
 {{- end -}}
 
