@@ -10,7 +10,7 @@ Add the following code to your module list in the `config/_default/module.toml` 
 
 ```toml
 [[imports]]
-path = "github.com/gethugothemes/hugo-modules/search"
+path = "github.com/RelampagoProyecto/kauka-modules/search"
 ```
 
 Add the following code to your `assets/scss/main.scss` or `assets/scss/style.scss` file.

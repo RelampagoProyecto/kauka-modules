@@ -1,5 +1,5 @@
 {{- $allSections := slice -}}
-{{- range site.Home.Sections -}}
+{{- range site.Pages -}}
   {{- $allSections = $allSections | append .Section -}}
 {{- end -}}
 
@@ -15,6 +15,7 @@
 {{- $searchablePages = (where site.Pages "Section" "in" $search_sections) -}}
 {{- end -}}
 
+
 {{- $totalPagesLength := len $searchablePages -}}
 
 [{{- range $i, $e := $searchablePages -}}
@@ -22,11 +23,11 @@
 
 {{- $date:= time.Format ":date_long" .PublishDate -}}
 
-{{- if .Params.image -}}
-  {{- $.Scratch.Set "image" (partial "searchImage" (dict "Src" .Params.image "Size" "420x" "Command" "Resize")) -}}
-  {{- $.Scratch.Set "imageSM" (partial "searchImage" (dict "Src" .Params.image "Size" "100x100" "Command" "Fill")) -}}
-{{- else if .Params.images -}}
-  {{- range first 1 .Params.images -}}
+{{- if .Params.imagen -}}
+  {{- $.Scratch.Set "image" (partial "searchImage" (dict "Src" .Params.imagen "Size" "420x" "Command" "Resize")) -}}
+  {{- $.Scratch.Set "imageSM" (partial "searchImage" (dict "Src" .Params.imagen "Size" "100x100" "Command" "Fill")) -}}
+{{- else if .Params.imagenes -}}
+  {{- range first 1 .Params.imagenes -}}
   {{- $.Scratch.Set "image" (partial "searchImage" (dict "Src" . "Size" "420x" "Command" "Resize")) -}}
   {{- $.Scratch.Set "imageSM" (partial "searchImage" (dict "Src" . "Size" "100x100" "Command" "Fill")) -}}
   {{- end -}}
